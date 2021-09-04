@@ -1,6 +1,8 @@
 package jpabook.jpashop;
 
 import jpabook.jpashop.domain.Member;
+import jpabook.jpashop.domain.Order;
+import jpabook.jpashop.domain.OrderItem;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -15,16 +17,15 @@ public class JpaMain {
 
         tx.begin();
         try {
-            Member member = new Member();
-            member.setName("name1");
-            member.setCity("SEOUL");
-            member.setStreet("월드컵로");
-            member.setZipcode("5115");
-            em.persist(member);
-            tx.commit();
+            Order order = new Order();
+            em.persist(order);
+            OrderItem orderItem = new OrderItem();
+            orderItem.setOrder(order);
+            em.persist(orderItem);
         } catch (Exception e) {
             tx.rollback();
         }finally {
+            tx.commit();
             emf.close();
         }
     }
