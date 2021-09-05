@@ -15,10 +15,10 @@ public class Member {
     private String street;
     private String zipcode;
 
-    @OneToMany(mappedBy = "member")
-    private List<Order> orders=new ArrayList<>();
-    @OneToMany(mappedBy = "order")
-    private List<OrderItem> orderItems = new ArrayList<>();
+    @OneToMany(mappedBy = "member")//연관관계 주인은 order
+    private List<Order> orders=new ArrayList<>();//널포인트익셉션 방지
+//    @OneToMany(mappedBy = "order")
+//    private List<OrderItem> orderItems = new ArrayList<>();
 
     public Member() {}
     public String getName() {

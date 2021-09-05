@@ -23,7 +23,10 @@ public class Order {
     @Enumerated(EnumType.STRING)
     private OrderStatus status;
 
-
+    public void addOrderItem(OrderItem orderItem) {
+        this.orderItems.add(orderItem);
+        orderItem.setOrder(this); //주인이 양방향매핑해주기
+    }
 
     public Long getId() {return id;}
     public void setId(Long id) {this.id = id;}
@@ -34,8 +37,4 @@ public class Order {
     public OrderStatus getStatus() {return status;}
     public void setStatus(OrderStatus status) {this.status = status;}
 
-    public void addOrderItem(OrderItem orderItem) {
-        orderItems.add(orderItem);
-        orderItem.setOrder(this); //양방향이 걸리도록!
-    }
 }
