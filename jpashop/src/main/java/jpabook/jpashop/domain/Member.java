@@ -16,7 +16,7 @@ public class Member {
     private String zipcode;
 
     @OneToMany(mappedBy = "member")//연관관계 주인은 order
-    private List<Order> orders=new ArrayList<>();//널포인트익셉션 방지
+    private List<Order> orders = new ArrayList<>();//널포인트익셉션 방지
 //    @OneToMany(mappedBy = "order")
 //    private List<OrderItem> orderItems = new ArrayList<>();
 
@@ -30,12 +30,8 @@ public class Member {
     public String getCity() {
         return city;
     }
-    public void setCity(String city) {
-        this.city = city;
-    }
-    public String getStreet() {
-        return street;
-    }
+    public void setCity(String city) {this.city = city;}
+    public String getStreet() {return street;}
     public void setStreet(String street) {
         this.street = street;
     }
