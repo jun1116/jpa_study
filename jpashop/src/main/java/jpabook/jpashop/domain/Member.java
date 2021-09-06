@@ -24,6 +24,15 @@ public class Member {
     public String getName() {
         return name;
     }
+
+    public List<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
+    }
+
     public void setName(String name) {this.name = name;}
     public Long getId() {return id;}
     public void setId(Long id) {id = id;}
