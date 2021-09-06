@@ -5,7 +5,7 @@ import javax.persistence.*;
 @Entity
 public class Delivery {
     @Id @GeneratedValue
-    @Column(name="DELEVERY_ID")
+    @Column(name="DELIVERY_ID")
     private Long id;
 
     private String city;
@@ -14,4 +14,6 @@ public class Delivery {
     @Enumerated
     private DeliveryStatus status;
 
+    @OneToOne(mappedBy = "delivery")//1:1양방향
+    private Order order;
 }
