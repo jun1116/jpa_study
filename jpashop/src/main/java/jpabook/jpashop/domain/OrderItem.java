@@ -1,6 +1,6 @@
 package jpabook.jpashop.domain;
 
-import org.hibernate.annotations.common.util.impl.Log;
+import jpabook.jpashop.domain.inheritance.Item;
 
 import javax.persistence.*;
 
